@@ -164,3 +164,32 @@ myStr = "Hello World";
 // 35. Use Bracket Notation to Find the Nth Character in a String
 const lastName = "Lovelace";
 const thirdLetterOfLastName = lastName[2];
+
+36. Use Bracket Notation to Find the Last Character in a String
+const lastName = "Lovelace";
+const lastLetterOfLastName = lastName[lastName.length-1];
+
+37. Use Bracket Notation to Find the Nth-to-Last Character in a String
+const lastName = "Lovelace";
+const secondToLastLetterOfLastName = lastName[lastName.length-2];
+
+38. Word Blanks
+const myNoun = "dog";
+const myAdjective = "big";
+const myVerb = "ran";
+const myAdverb = "quickly";
+const wordBlanks = "My " + myNoun + " is " + myAdjective + " and " + myVerb + " really " + myAdverb;
+
+39. Store Multiple Values in one Variable using JavaScript Arrays
+const myArray = ["srting", 10];
+
+40. Nest one Array within Another Array
+const myArray = [10, [1, 2, 3], 20];
+
+41. Access Array Data with Indexes
+const myArray = [50, 60, 70];
+const myData = myArray[0];
+
+42. Modify Array Data With Indexes
+const myArray = [18, 64, 99];
+myArray[0] = 45;
