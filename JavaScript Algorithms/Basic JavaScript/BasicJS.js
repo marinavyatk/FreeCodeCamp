@@ -165,31 +165,128 @@ myStr = "Hello World";
 const lastName = "Lovelace";
 const thirdLetterOfLastName = lastName[2];
 
-36. Use Bracket Notation to Find the Last Character in a String
+// 36. Use Bracket Notation to Find the Last Character in a String
 const lastName = "Lovelace";
 const lastLetterOfLastName = lastName[lastName.length-1];
 
-37. Use Bracket Notation to Find the Nth-to-Last Character in a String
+// 37. Use Bracket Notation to Find the Nth-to-Last Character in a String
 const lastName = "Lovelace";
 const secondToLastLetterOfLastName = lastName[lastName.length-2];
 
-38. Word Blanks
+// 38. Word Blanks
 const myNoun = "dog";
 const myAdjective = "big";
 const myVerb = "ran";
 const myAdverb = "quickly";
 const wordBlanks = "My " + myNoun + " is " + myAdjective + " and " + myVerb + " really " + myAdverb;
 
-39. Store Multiple Values in one Variable using JavaScript Arrays
+// 39. Store Multiple Values in one Variable using JavaScript Arrays
 const myArray = ["srting", 10];
 
-40. Nest one Array within Another Array
+// 40. Nest one Array within Another Array
 const myArray = [10, [1, 2, 3], 20];
 
-41. Access Array Data with Indexes
+// 41. Access Array Data with Indexes
 const myArray = [50, 60, 70];
 const myData = myArray[0];
 
-42. Modify Array Data With Indexes
+// 42. Modify Array Data With Indexes
 const myArray = [18, 64, 99];
 myArray[0] = 45;
+
+// 43. Access Multi-Dimensional Arrays With Indexes
+const myArray = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [[10, 11, 12], 13, 14],
+  ];
+  
+  const myData = myArray[2][1];
+
+// 44. Manipulate Arrays With push Method
+  const myArray = [["John", 23], ["cat", 2]];
+  myArray.push(["dog", 3]);
+
+//   45. Manipulate Arrays With pop Method
+  const myArray = [["John", 23], ["cat", 2]];
+const removedFromMyArray = myArray.pop();
+
+// 46. Manipulate Arrays With shift Method
+const myArray = [["John", 23], ["dog", 3]];
+const removedFromMyArray = myArray.shift();
+
+// 47. Manipulate Arrays With unshift Method
+const myArray = [["John", 23], ["dog", 3]];
+myArray.shift();
+myArray.unshift(["Paul", 35]);
+
+// 48. Shopping List
+const myList = [["milk", 2], ["bread", 3], ["eggs", 10], ["butter", 1], ["bananas", 10]];
+
+// 49. Write Reusable JavaScript with Functions
+function reusableFunction (){
+    console.log("Hi World");
+  }
+  reusableFunction();
+
+// 50. Passing Values to Functions with Arguments
+  function functionWithArgs(a,b){
+    console.log(a+b);
+    }
+    functionWithArgs(7,9);
+
+// 51. Return a Value from a Function with Return
+function timesFive(num){
+    return num*5;
+  }
+
+// 52. Global Scope and Functions
+const myGlobal = 10;
+function fun1() {
+oopsGlobal = 5;
+}
+function fun2() {
+  let output = "";
+  if (typeof myGlobal != "undefined") {
+    output += "myGlobal: " + myGlobal;
+  }
+  if (typeof oopsGlobal != "undefined") {
+    output += " oopsGlobal: " + oopsGlobal;
+  }
+  console.log(output);
+} 
+
+// 53. Local Scope and Functions
+function myLocalScope() {
+  let myVar 
+    console.log('inside myLocalScope', myVar);
+  }
+  myLocalScope();
+  console.log('outside myLocalScope', myVar);
+
+// 54. Global vs. Local Scope in Functions
+  const outerWear = "T-Shirt";
+function myOutfit() {
+let outerWear = "sweater";
+  return outerWear;
+}
+myOutfit();
+
+// 55. Understanding Undefined Value returned from a Function
+let sum = 0;
+function addThree() {
+  sum = sum + 3;
+}
+function addFive(){
+  sum += 5;
+}
+addThree();
+addFive();
+
+// 56. Assignment with a Returned Value
+let processed = 0;
+function processArg(num) {
+  return (num + 3) / 5;
+}
+processed = processArg(7);
