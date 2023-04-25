@@ -621,3 +621,95 @@ function chainToSwitch(val) {
     return a < b;
   }
   isLess(10, 15);
+
+// 81. Return Early Pattern for Functions
+  function abTest(a, b) {
+if(a<0 || b<0){
+  return undefined;
+}
+  return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
+}
+abTest(2,2);
+
+// 82. Counting Cards
+let count = 0;
+function cc(card) {
+if(card == 2 || card == 3 || card == 4 || card == 5 || card == 6){
+  count++;
+}
+else if(card == 10 || card == "J" || card == "Q" || card == "K" || card == "A"){
+  count--;
+}
+if(count>0){
+  return count + " Bet";
+}
+if(count<=0){
+  return count + " Hold";
+}
+}
+
+// 83. Build JavaScript Objects
+const myDog = {
+name: "Bysinka",
+legs: 4,
+tails: 1,
+friends: ["Cat Roger", "Dog Barry"]
+};
+
+// 84. Accessing Object Properties with Dot Notation
+const testObj = {
+  "hat": "ballcap",
+  "shirt": "jersey",
+  "shoes": "cleats"
+};
+const hatValue = testObj.hat;     
+const shirtValue = testObj.shirt;
+
+// 85. Accessing Object Properties with Bracket Notation
+const testObj = {
+  "an entree": "hamburger",
+  "my side": "veggies",
+  "the drink": "water"
+};
+const entreeValue = testObj["an entree"];  
+const drinkValue = testObj["the drink"]; 
+
+
+// 86. Accessing Object Properties with Variables
+const testObj = {
+  12: "Namath",
+  16: "Montana",
+  19: "Unitas"
+};
+const playerNumber = 16;  
+const player = testObj[playerNumber];
+
+// 87. Updating Object Properties
+const myDog = {
+  "name": "Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+myDog.name = "Happy Coder";
+
+// 88. Add New Properties to a JavaScript Object
+const myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+myDog.bark =  "woof";
+
+89. Delete Properties from a JavaScript Object
+const myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"],
+  "bark": "woof"
+};
+delete myDog.tails;
+
+90.
