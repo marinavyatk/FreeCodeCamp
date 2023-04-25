@@ -702,7 +702,7 @@ const myDog = {
 };
 myDog.bark =  "woof";
 
-89. Delete Properties from a JavaScript Object
+// 89. Delete Properties from a JavaScript Object
 const myDog = {
   "name": "Happy Coder",
   "legs": 4,
@@ -712,4 +712,85 @@ const myDog = {
 };
 delete myDog.tails;
 
-90.
+// 90. Using Objects for Lookups
+function phoneticLookup(val) {
+  const lookup = {
+  alpha: "Adams",
+  bravo: "Boston",
+  charlie: "Chicago",
+  delta: "Denver",
+  echo: "Easy",
+  foxtrot: "Frank"
+  }
+let result = lookup[val];
+  return result;
+}
+phoneticLookup("charlie");
+
+// 91. Testing Objects for Properties
+function checkObj(obj, checkProp) {
+  if(obj.hasOwnProperty(checkProp)){
+    return obj[checkProp];
+  }
+  else{
+    return "Not Found";
+  }
+}
+
+// 92. Manipulating Complex Objects
+const myMusic = [
+  {
+    "artist": "Billy Joel",
+    "title": "Piano Man",
+    "release_year": 1973,
+    "formats": [
+      "CD",
+      "8T",
+      "LP"
+    ],
+    "gold": true
+  },
+  {
+    artist: "Billie Eilish",
+    title: "Getting older",
+    release_year: 2021,
+  formats: ["CD", "8T","LP"]
+  }
+];
+
+// 93. Accessing Nested Objects
+const myStorage = {
+  "car": {
+    "inside": {
+      "glove box": "maps",
+      "passenger seat": "crumbs"
+     },
+    "outside": {
+      "trunk": "jack"
+    }
+  }
+};
+
+const gloveBoxContents = myStorage.car.inside["glove box"];
+
+94. Accessing Nested Arrays
+const myPlants = [
+  {
+    type: "flowers",
+    list: [
+      "rose",
+      "tulip",
+      "dandelion"
+    ]
+  },
+  {
+    type: "trees",
+    list: [
+      "fir",
+      "pine",
+      "birch"
+    ]
+  }
+];
+
+const secondTree = myPlants[1].list[1];
