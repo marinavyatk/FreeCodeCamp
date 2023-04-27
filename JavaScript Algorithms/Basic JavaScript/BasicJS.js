@@ -870,7 +870,7 @@ for(let i=0; i<myArr.length; i++){
 total+=myArr[i];
 }
 
-101. Nesting For Loops
+// 101. Nesting For Loops
 function multiplyAll(arr) {
   let product = 1;
 for(let i=0; i<arr.length; i++){
@@ -882,14 +882,44 @@ for(let i=0; i<arr.length; i++){
 }
 multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);
 
-102. Iterate with JavaScript Do...While Loops
+// 102. Iterate with JavaScript Do...While Loops
 const myArray = [];
 let i = 10;
 
-// Only change code below this line
+
 do{
   myArray.push(i);
   i++;
 }
 while (i < 5);
 
+// 103. Replace Loops using Recursion
+function sum(arr, n) {
+  if (n <= 0) {
+      return 0;}
+return sum(arr,n-1) + arr[n-1];
+  }
+
+104. Profile Lookup
+
+// 105. Generate Random Fractions with JavaScript
+function randomFraction() {
+  return Math.random();
+}
+
+// 106. Generate Random Whole Numbers with JavaScript
+function randomWholeNum() {
+  return Math.floor(Math.random()*10);
+}
+
+// 107. Generate Random Whole Numbers within a Range
+function randomRange(myMin, myMax) {
+  return Math.floor(Math.random()*(myMax-myMin+1)+myMin);
+}
+
+// 108. Use the parseInt Function
+function convertToInteger(str) {
+return parseInt(str);
+}
+
+convertToInteger("56");
