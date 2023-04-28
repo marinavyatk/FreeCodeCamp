@@ -923,3 +923,38 @@ return parseInt(str);
 }
 
 convertToInteger("56");
+
+// 109. Use the parseInt Function with a Radix
+function convertToInteger(str) {
+  return parseInt(str, 2);
+  }
+convertToInteger("10011");
+
+// 110. Use the Conditional (Ternary) Operator
+function checkEqual(a, b) {
+  return a === b? "Equal": "Not Equal";
+  }
+  
+  checkEqual(1, 2);
+
+// 111. Use Multiple Conditional (Ternary) Operators
+function checkSign(num) {
+  return num>0? "positive"
+  :num<0?  "negative"
+  : "zero";
+  }
+  
+  checkSign(10);
+
+// 112. Use Recursion to Create a Countdown
+function countdown(n){
+  if(n<1){return []}
+  else{
+    const countArray = countdown(n-1);
+    countArray.unshift(n);
+    return countArray;
+  }
+ }
+
+ 113. Use Recursion to Create a Range of Numbers
+ 
