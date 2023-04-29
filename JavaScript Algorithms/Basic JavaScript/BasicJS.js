@@ -900,7 +900,22 @@ function sum(arr, n) {
 return sum(arr,n-1) + arr[n-1];
   }
 
-104. Profile Lookup
+// 104. Profile Lookup
+function lookUpProfile(name, prop) {
+  for (let i = 0; i < contacts.length; i++) {
+    if (name === contacts[i]["firstName"]) {
+      if (contacts[i].hasOwnProperty(prop)) {
+        console.log(contacts[i][prop]);
+        return contacts[i][prop];
+      } else {
+        console.log("No such property");
+        return "No such property";
+      }
+    }
+  }
+  console.log("No such contact");
+  return "No such contact";
+}
 
 // 105. Generate Random Fractions with JavaScript
 function randomFraction() {
@@ -956,5 +971,14 @@ function countdown(n){
   }
  }
 
- 113. Use Recursion to Create a Range of Numbers
- 
+//  113. Use Recursion to Create a Range of Numbers
+ function rangeOfNumbers(startNum, endNum) {
+  if (startNum === endNum) {
+    return [endNum];
+  } else if (startNum < endNum) {
+    const array = rangeOfNumbers(startNum + 1, endNum);
+    array.unshift(startNum);
+    return array;
+  }
+}
+
