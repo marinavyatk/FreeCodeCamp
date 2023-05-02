@@ -48,3 +48,76 @@ let result = quoteSample.match(alphabetRegex);
 let quoteSample = "Blueberry 3.141592653s are delicious.";
 let myRegex = /[h-s2-6]/gi;
 let result = quoteSample.match(myRegex);
+
+// 11. Match Single Characters Not Specified
+let quoteSample = "3 blind mice.";
+let myRegex = /[^0-9aoieuoy]/gi;
+let result = quoteSample.match(myRegex);
+
+// 12. Match Characters that Occur One or More Times
+let difficultSpelling = "Mississippi";
+let myRegex = /s+/gi;
+let result = difficultSpelling.match(myRegex);
+
+// 13. Match Characters that Occur Zero or More Times
+let chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
+let chewieRegex = /Aa*/;
+let result = chewieQuote.match(chewieRegex);
+
+// 14. Find Characters with Lazy Matching
+let text = "<h1>Winter is coming</h1>";
+let myRegex = /<.*?>/;
+let result = text.match(myRegex);
+
+// 15. Find One or More Criminals in a Hunt
+let reCriminals = /C+/;
+
+// 16. Match Beginning String Patterns
+let rickyAndCal = "Cal and Ricky both like racing.";
+let calRegex = /^Cal/;
+let result = calRegex.test(rickyAndCal);
+
+// 17. Match Ending String Patterns
+let caboose = "The last car on a train is the caboose";
+let lastRegex = /caboose$/;
+let result = lastRegex.test(caboose);
+
+// 18. Match All Letters and Numbers
+let quoteSample = "The five boxing wizards jump quickly.";
+let alphabetRegexV2 = /\w/g;
+let result = quoteSample.match(alphabetRegexV2).length;
+
+// 19. Match Everything But Letters and Numbers
+let quoteSample = "The five boxing wizards jump quickly.";
+let nonAlphabetRegex = /\W/g;
+let result = quoteSample.match(nonAlphabetRegex).length;
+
+// 20. Match All Numbers
+let movieName = "2001: A Space Odyssey";
+let numRegex = /\d/g;
+let result = movieName.match(numRegex).length;
+
+// 21. Match All Non-Numbers
+let movieName = "2001: A Space Odyssey";
+let noNumRegex = /\D/g;
+let result = movieName.match(noNumRegex).length;
+
+// 22. Restrict Possible Usernames
+let username = "JackOfAllTrades";
+let userCheck = /^\D[a-z]+\d*$|^\D\d\d+$/gi;
+let result = userCheck.test(username);
+
+// 23. Match Whitespace
+let sample = "Whitespace is important in separating words";
+let countWhiteSpace = /\s/g;
+let result = sample.match(countWhiteSpace);
+
+// 24. Match Non-Whitespace Characters
+let sample = "Whitespace is important in separating words";
+let countNonWhiteSpace = /\S/g;
+let result = sample.match(countNonWhiteSpace);
+
+// 25. Specify Upper and Lower Number of Matches
+let ohStr = "Ohhh no";
+let ohRegex = /oh{3,6} no/gi;
+let result = ohRegex.test(ohStr);
