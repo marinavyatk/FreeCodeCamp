@@ -87,3 +87,82 @@ function booWho(bool) {
 }
 
 booWho(null);
+
+// 11. Title Case a Sentence
+function titleCase(str) {
+  return str
+    .split(" ")
+    .map((el) => {
+      return el[0].toUpperCase() + el.slice(1).toLowerCase();
+    })
+    .join(" ");
+}
+
+titleCase("I'm a little tea pot");
+
+// 12. Slice and Splice
+function frankenSplice(arr1, arr2, n) {
+  let copyArr = arr2.slice();
+  copyArr.splice(n, 0, ...arr1);
+  return copyArr;
+}
+
+frankenSplice([1, 2, 3], [4, 5, 6], 1);
+
+// 13. Falsy Bouncer
+function bouncer(arr) {
+  const trueArr = [];
+  arr.forEach((el) => {
+    if (Boolean(el) == true) {
+      trueArr.push(el);
+    }
+  });
+  return trueArr;
+}
+
+bouncer([7, "ate", "", false, 9]);
+
+// 14. Where do I Belong
+function getIndexToIns(arr, num) {
+  const sortedArray = arr.sort((a, b) => a - b);
+  if (arr.length === 0) {
+    return 0;
+  }
+  for (let i = 0; i < sortedArray.length; i++) {
+    if (num > sortedArray[sortedArray.length - 1]) {
+      return sortedArray.length;
+    }
+    if (sortedArray[i] >= num) {
+      return i;
+    }
+  }
+}
+
+getIndexToIns([40, 60], 50);
+
+//  15. Mutations
+function mutation(arr) {
+  let count = 0;
+  for (let i = 0; i < arr[1].length; i++) {
+    if (arr[0].toLowerCase().includes(arr[1][i].toLowerCase())) {
+      count += 1;
+    }
+  }
+  return count === arr[1].length;
+}
+
+mutation(["hello", "hey"]);
+
+// 16. Chunky Monkey
+function chunkArrayInGroups(arr, size) {
+  let newArr = [];
+  while (arr.length >= size) {
+    newArr.push(arr.splice(0, size));
+  }
+  if (arr.length !== 0) {
+    newArr.push(arr);
+  }
+  return newArr;
+}
+
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
