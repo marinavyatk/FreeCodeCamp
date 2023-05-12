@@ -592,3 +592,71 @@ function getRating(watchList) {
 }
 
 console.log(getRating(watchList));
+
+// 16. Use Higher-Order Functions map, filter, or reduce to Solve a Complex Problem
+const squareList = (arr) => {
+  // Only change code below this line
+  return arr.filter((el) => el > 0 && el % 1 === 0).map((el) => el ** 2);
+  // Only change code above this line
+};
+
+const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
+console.log(squaredIntegers);
+
+// 17. Sort an Array Alphabetically using the sort Method
+function alphabeticalOrder(arr) {
+  return arr.sort();
+}
+
+alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
+
+// 18. Return a Sorted Array Without Changing the Original Array
+const globalArray = [5, 6, 3, 2, 9];
+
+function nonMutatingSort(arr) {
+  return arr.slice().sort((a, b) => a - b);
+}
+
+nonMutatingSort(globalArray);
+
+// 19. Split a String into an Array Using the split Method
+function splitify(str) {
+  return str.split(/[\s.,-]/);
+}
+
+splitify("Hello World,I-am code");
+
+// 20. Combine an Array into a String Using the join Method
+function sentensify(str) {
+  return str.split(/[,.-]/).join(" ");
+}
+sentensify("May-the-force-be-with-you");
+
+// 21. Apply Functional Programming to Convert Strings to URL Slugs
+function urlSlug(title) {
+  return title.trim().split(/\s+/).join("-").toLowerCase();
+}
+urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone");
+
+// 22. Use the every Method to Check that Every Element in an Array Meets a Criteria
+function checkPositive(arr) {
+  return arr.every((el) => el > 0);
+}
+checkPositive([1, 2, 3, -4, 5]);
+
+// 23. Use the some Method to Check that Any Elements in an Array Meet a Criteria
+function checkPositive(arr) {
+  return arr.some((el) => el > 0);
+}
+checkPositive([1, 2, 3, -4, 5]);
+
+// 24. Introduction to Currying and Partial Application
+function add(x) {
+  return function (y) {
+    return function (z) {
+      return x + y + z;
+    };
+  };
+}
+
+add(10)(20)(30);
