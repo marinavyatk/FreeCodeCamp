@@ -69,3 +69,23 @@ whatIsInAName(
 );
 
 // 5. Spinal Tap Case
+function spinalCase(str) {
+  let newStr =  str.replace(/([a-z])([A-Z])/g, "$1 $2");
+  return newStr.replace(/\s+|_+/g, "-").toLowerCase();
+  }
+  
+  spinalCase("thisIsSpinalTap");
+
+// 6. Pig Latin
+function translatePigLatin(str) {
+  if(/[aeiou]/.test(str[0])){
+    return str+"way";
+  }
+  let indexFirstVowel = str.search(/[aeiou]/)
+  if(indexFirstVowel === -1){
+    return str +"ay"
+    }
+return str.slice(indexFirstVowel)+str.slice(0, indexFirstVowel) + "ay";
+}
+
+translatePigLatin("consonant");
