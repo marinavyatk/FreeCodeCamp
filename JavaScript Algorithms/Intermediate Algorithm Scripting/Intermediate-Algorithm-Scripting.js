@@ -89,3 +89,47 @@ return str.slice(indexFirstVowel)+str.slice(0, indexFirstVowel) + "ay";
 }
 
 translatePigLatin("consonant");
+
+// 7. Search and Replace
+function myReplace(str, before, after) {
+  if(before[0] === before[0].toUpperCase()){
+    return str.replace(before, after.slice(0,1).toUpperCase()+after.slice(1));
+  }
+  else{
+    return str.replace(before, after.slice(0,1).toLowerCase()+after.slice(1));
+  }
+}
+
+myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+
+// 8. DNA Pairing
+function pairElement(str) {
+  let DNAstrand = [];
+  let withoutPair = str.split("");
+  withoutPair.forEach((el)=>{
+  switch(el){
+      case "A": DNAstrand.push([el, "T"]); break;
+      case "T": DNAstrand.push([el, "A"]); break;
+      case "C": DNAstrand.push([el, "G"]); break;
+      case "G": DNAstrand.push([el, "C"]); break;
+    }
+  })
+  return DNAstrand;
+}
+
+pairElement("GCG");
+
+// 9. Missing letters
+function fearNotLetter(str) {
+  let alphabet = "abcdefghijklmnopqrstuvwxyz";
+  let index = alphabet.indexOf(str[0]);
+  for(let i = 0; i<str.length; i++){
+    if(str[i] !== alphabet[index+i]){
+      return alphabet[index+i];
+    }
+  }
+}
+
+fearNotLetter("abce");
+
+// 10. Sorted Union
