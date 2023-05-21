@@ -133,3 +133,18 @@ function fearNotLetter(str) {
 fearNotLetter("abce");
 
 // 10. Sorted Union
+function uniteUnique(...arr) {
+  let unitedArray =  arr.flat();
+  let answerArray = [];
+  for(let i = 0; i<unitedArray.length; i++){
+    // if(unitedArray[i] === unitedArray.indexOf(unitedArray[i])){}
+    if(!answerArray.includes(unitedArray[i])){
+answerArray.push(unitedArray[i]);
+    }
+  }
+  return answerArray;
+}
+
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+
+// 11. Convert HTML Entities
