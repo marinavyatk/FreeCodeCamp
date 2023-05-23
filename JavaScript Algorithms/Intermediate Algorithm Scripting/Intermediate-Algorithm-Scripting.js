@@ -148,3 +148,50 @@ answerArray.push(unitedArray[i]);
 uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 
 // 11. Convert HTML Entities
+function convertHTML(str) {
+  let stringArray = str.split("");
+for(let i=0; i<stringArray.length;i++){
+     switch (stringArray[i]){
+             case "&": stringArray[i] = "&amp;";break;
+             case "<": stringArray[i] = "&lt;";break;
+             case ">": stringArray[i] = "&gt;";break;
+             case "\"": stringArray[i] = "&quot;";break;
+             case "\'": stringArray[i] = "&apos;";break;
+
+     }
+}
+  return stringArray.join("");  
+}
+
+convertHTML("Dolce & Gabbana");
+
+// 12. Sum All Odd Fibonacci Numbers
+// Firstly I solved this task with for loop, but it doesn`t work for big numbers.
+function sumFibs(num) {
+  let fibonacciSequence = [0,1];
+  for(let i=1; i<=num; i++){
+    fibonacciSequence.push(fibonacciSequence[i]+fibonacciSequence[i-1]);
+  }
+      console.log(fibonacciSequence); 
+  return fibonacciSequence.filter((el)=>el%2 !==0 && el<= num).reduce((prev,curr)=>prev+curr,0);
+ 
+}
+
+sumFibs(4);
+
+// So, second solution:
+function sumFibs(num) {
+  let previous = 0;
+  let current = 1;
+  let sum = 0;
+  while(current<=num){
+    if (current%2 !== 0) {
+ sum += current;
+ }
+ current = current+previous;
+ previous = current - previous;
+  }
+  return sum;
+ }
+ 
+ sumFibs(4);
